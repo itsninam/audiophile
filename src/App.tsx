@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import { Routes, Route } from "react-router-dom";
@@ -8,7 +8,7 @@ import Headphones from "./pages/Headphones";
 
 function App() {
   return (
-    <>
+    <div className="wrapper">
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/speakers" element={<Speakers />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
