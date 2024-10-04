@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
+import { Routes, Route } from "react-router-dom";
+import Speakers from "./pages/Speakers";
+import Earphones from "./pages/Earphones";
+import Headphones from "./pages/Headphones";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/headphones" element={<Headphones />} />
+        <Route path="/earphones" element={<Earphones />} />
+        <Route path="/speakers" element={<Speakers />} />
+      </Routes>
+    </>
   );
 }
 
