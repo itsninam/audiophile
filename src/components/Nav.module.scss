@@ -4,18 +4,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.navList {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
+  .navList {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
 
-.navLink {
-  color: black;
-}
+  .navLink {
+    color: black;
+  }
 
-.navLink:global.active {
-  color: deeppink;
+  .navLink:global.active {
+    color: deeppink;
+  }
 }
