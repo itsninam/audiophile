@@ -1,4 +1,23 @@
 header {
-  height: calc(100vh - 94px);
-  border: 1px solid red;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 639px;
+
+  &::after {
+    content: "";
+    background-color: #191919;
+    position: absolute;
+
+    background-image: url("../assets/home/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    top: -90px;
+    left: 0px;
+    height: 729px;
+    z-index: -1;
+  }
 }

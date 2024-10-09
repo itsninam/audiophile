@@ -6,7 +6,7 @@ import logo from "../assets/shared/desktop/logo.svg";
 
 function Nav() {
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} wrapper`}>
       <NavLink to="/">
         <img src={logo} alt="logo" />
       </NavLink>

@@ -8,7 +8,7 @@ import Headphones from "./pages/Headphones";
 
 function App() {
   return (
-    <div className="wrapper">
+    <div>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
