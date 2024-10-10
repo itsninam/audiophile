@@ -1,23 +1,50 @@
+@import "../styles/colors";
+
 header {
   position: relative;
-  color: white;
+  color: $colour-text-white;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 639px;
+  background-color: $colour-background;
+  height: 600px;
 
   &::after {
+    animation: fadeIn 4s;
     content: "";
-    background-color: #191919;
+    background-color: $colour-background;
     position: absolute;
 
     background-image: url("../assets/home/desktop/image-hero.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     width: 100%;
-    top: -90px;
+    height: 100%;
+    top: 0px;
     left: 0px;
-    height: 729px;
-    z-index: -1;
+  }
+
+  div {
+    z-index: 10;
+    animation: wait 700ms, fadeIn 4s 700ms;
+  }
+}
+
+@keyframes wait {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
