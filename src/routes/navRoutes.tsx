@@ -1,9 +1,9 @@
-export interface navRoute {
+export interface NavRoute {
   routeName: string;
   routeLink: string;
 }
 
-const navRoutes: navRoute[] = [
+const navRoutes: NavRoute[] = [
   {
     routeName: "Home",
     routeLink: "/",

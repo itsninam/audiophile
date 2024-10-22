@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "./Header.module.scss";
-import Button from "./Button";
+import ProductDescription from "./ProductDescription";
 
 function Header() {
   useEffect(() => {
@@ -11,15 +11,12 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <div className="wrapper">
-        <p>New Product</p>
-        <p>XX99 Mark II Headphones</p>
-        <p>
-          Experience natural, lifelike audio and exceptional build quality made
-          for the passionate music enthusiast.
-        </p>
-        <Button buttonClass="primary" buttonLabel="See products"></Button>
-      </div>
+      <ProductDescription
+        isNewProduct={false}
+        productName="XX99 Mark II Headphones"
+        productDescription="Experience natural, lifelike audio and exceptional build quality made
+          for the passionate music enthusiast."
+      />
     </header>
   );
 }

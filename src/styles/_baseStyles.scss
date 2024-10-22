@@ -35,3 +35,15 @@ h1 {
   margin: 0px;
   padding: 0px;
 }
+
+button {
+  background-color: transparent;
+  padding: 8px 16px;
+  border: none;
+  text-transform: uppercase;
+
+  &.primary {
+    background-color: $colour-accent;
+    color: $colour-text-white;
+  }
+}

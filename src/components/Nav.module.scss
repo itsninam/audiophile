@@ -29,4 +29,29 @@
   .navLink:global.active {
     color: $colour-accent;
   }
+
+  .mobileMenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav {
+    .wrapper {
+      justify-content: normal;
+      gap: 16px;
+    }
+
+    h1 {
+      flex: 1;
+    }
+
+    .navList {
+      display: none;
+    }
+
+    .mobileMenu {
+      display: block;
+    }
+  }
 }
