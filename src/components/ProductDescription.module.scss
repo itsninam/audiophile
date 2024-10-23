@@ -1,6 +1,31 @@
+@import "../styles/colors";
+
 .productDescription {
   .featuredProductTag {
-    width: 400px;
-    border: 2px solid red;
+    width: 380px;
+    margin-bottom: 24px;
+  }
+
+  .productTag {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    color: $colour-text-light;
+
+    &.secondary {
+      color: $colour-accent;
+    }
+  }
+
+  .productName {
+    font-size: 5.5rem;
+    line-height: 5.5rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .productDescription {
+    color: $colour-text-light;
+    line-height: 2.5rem;
   }
 }

@@ -41,9 +41,30 @@ button {
   padding: 8px 16px;
   border: none;
   text-transform: uppercase;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  letter-spacing: 1px;
 
   &.primary {
     background-color: $colour-accent;
     color: $colour-text-white;
+
+    &:hover {
+      background-color: transparent;
+      color: $colour-accent;
+      border: 2px solid $colour-accent;
+    }
   }
 }
+
+// .productTag {
+//   text-transform: uppercase;
+//   letter-spacing: 2px;
+//   margin-bottom: 16px;
+
+//   &.primary {
+//     color: $colour-text-light;
+//   }
+// }

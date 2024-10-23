@@ -1,19 +1,51 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import ProductDescription from "./ProductDescription";
+import data from "../data.json";
+
+export interface Product {
+  id: number;
+  slug: string;
+  name: string;
+  subName: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
+  category: string;
+  categoryImage: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
+  new: boolean;
+  price: number;
+  description: string;
+  features: string;
+  others: {
+    slug: string;
+    name: string;
+    image: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+  }[];
+}
 
 function Header() {
+  const [products, setProducts] = useState<Product[]>([]);
+
   useEffect(() => {
-    // console.log(window.innerHeight);
-    // const header = document.querySelector("header");
-    // header!.style.height = window.innerHeight + 90 + "px";
+    setProducts(data);
   }, []);
 
   return (
     <header className={styles.header}>
       <ProductDescription
-        isNewProduct={false}
-        productName="XX99 Mark II Headphones"
+        products={products}
+        isFeaturedProduct={true}
         productDescription="Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast."
       />

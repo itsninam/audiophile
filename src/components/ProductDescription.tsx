@@ -1,23 +1,42 @@
 import Button from "./Button";
 import styles from "./ProductDescription.module.scss";
+import { Product } from "./Header";
 
-export interface ProductDescription {
-  productName: string;
-  productDescription: string;
-  isNewProduct?: boolean;
+interface ProductDescriptionProps {
+  modifierClass?: string;
+  products: Product[];
+  productDescription?: string;
+  isFeaturedProduct: boolean;
 }
 
 function ProductDescription({
-  productName,
+  modifierClass,
+  products,
   productDescription,
-  isNewProduct,
-}: ProductDescription) {
+  isFeaturedProduct,
+}: ProductDescriptionProps) {
+  const featuredProduct = products
+    .filter((product) => product.category === "headphones")
+    .find((headphones) => headphones.new);
+
   return (
     <div className={`${styles.productDescription} wrapper`}>
       <div className={styles.featuredProductTag}>
-        {isNewProduct && <p className={styles.productTag}>New Product</p>}
-        <p className={styles.productName}>{productName}</p>
-        <p className={styles.productDescription}>{productDescription}</p>
+        {featuredProduct?.new && (
+          <p
+            className={`${styles.productTag} ${
+              modifierClass === "secondary" && styles.secondary
+            }`}
+          >
+            New Product
+          </p>
+        )}
+        <p className={styles.productName}>{featuredProduct?.name}</p>
+        <p className={styles.productDescription}>
+          {isFeaturedProduct
+            ? productDescription
+            : featuredProduct?.description}
+        </p>
       </div>
       <Button buttonClass="primary" buttonLabel="See products"></Button>
     </div>
