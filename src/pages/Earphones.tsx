@@ -1,5 +1,13 @@
+import Heading from "../components/Heading";
+import ProductDescription from "../components/ProductDescription";
+
 function Earphones() {
-  return <div>Earphones</div>;
+  return (
+    <>
+      <Heading />
+      <ProductDescription />
+    </>
+  );
 }
 
 export default Earphones;

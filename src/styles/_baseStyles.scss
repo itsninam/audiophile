@@ -31,7 +31,8 @@ a {
   position: relative;
 }
 
-h1 {
+h1,
+h2 {
   margin: 0px;
   padding: 0px;
 }
@@ -58,13 +59,3 @@ button {
     }
   }
 }
-
-// .productTag {
-//   text-transform: uppercase;
-//   letter-spacing: 2px;
-//   margin-bottom: 16px;
-
-//   &.primary {
-//     color: $colour-text-light;
-//   }
-// }

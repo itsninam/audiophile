@@ -1,0 +1,11 @@
+@import "../styles/colors";
+
+.pageHeading {
+  text-transform: uppercase;
+  background-color: $colour-background;
+  color: $colour-text-white;
+  padding: 72px 0px;
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 2px;
+}

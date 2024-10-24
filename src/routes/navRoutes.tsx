@@ -13,12 +13,12 @@ const navRoutes: NavRoute[] = [
     routeLink: "/headphones",
   },
   {
-    routeName: "Earphones",
-    routeLink: "/earphones",
-  },
-  {
     routeName: "Speakers",
     routeLink: "/speakers",
+  },
+  {
+    routeName: "Earphones",
+    routeLink: "/earphones",
   },
 ];
 

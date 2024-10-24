@@ -2,30 +2,40 @@
 
 .productDescription {
   .featuredProductTag {
-    width: 380px;
+    width: 450px;
     margin-bottom: 24px;
   }
 
   .productTag {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 12px;
     margin-bottom: 16px;
-    color: $colour-text-light;
+    color: $colour-accent;
+    font-size: 1.4rem;
 
     &.secondary {
-      color: $colour-accent;
+      color: $colour-text-light;
     }
   }
 
   .productName {
-    font-size: 5.5rem;
-    line-height: 5.5rem;
+    font-size: 3.5rem;
     font-weight: 600;
     margin-bottom: 16px;
+    max-width: 13ch;
+
+    &.secondary {
+      line-height: 5.5rem;
+      font-size: 5.5rem;
+    }
   }
 
   .productDescription {
-    color: $colour-text-light;
+    color: $colour-text;
     line-height: 2.5rem;
+
+    &.secondary {
+      color: $colour-text-light;
+    }
   }
 }
