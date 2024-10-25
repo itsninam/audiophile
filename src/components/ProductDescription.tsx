@@ -11,35 +11,51 @@ function ProductDescription({
   const { featuredProduct } = useProduct();
 
   return (
-    <div className={`${styles.productDescription} wrapper`}>
-      <div className={styles.featuredProductTag}>
-        {featuredProduct?.new && (
-          <p
-            className={`${styles.productTag} ${
-              modifierClass === "secondary" && styles.secondary
+    <div className={`${styles.productContainer} wrapper`}>
+      <ul className={styles.productList}>
+        {featuredProduct.map((product) => (
+          <li
+            key={product.id}
+            className={`${styles.productItem} ${
+              modifierClass === "secondary" ? styles.secondary : ""
             }`}
           >
-            New Product
-          </p>
-        )}
-        <p
-          className={`${styles.productName} ${
-            modifierClass === "secondary" && styles.secondary
-          }`}
-        >
-          {featuredProduct?.name}
-        </p>
-        <p
-          className={`${styles.productDescription} ${
-            modifierClass === "secondary" && styles.secondary
-          }`}
-        >
-          {isFeaturedProduct
-            ? productDescription
-            : featuredProduct?.description}
-        </p>
-      </div>
-      <Button buttonClass="primary" buttonLabel="See product"></Button>
+            <div className={styles.productInfo}>
+              {product.new && (
+                <p
+                  className={`${styles.productTag} ${
+                    modifierClass === "secondary" ? styles.secondary : ""
+                  }`}
+                >
+                  New Product
+                </p>
+              )}
+              <p
+                className={`${styles.productName} ${
+                  modifierClass === "secondary" ? styles.secondary : ""
+                }`}
+              >
+                {product?.name}
+              </p>
+              <p
+                className={`${styles.productDescription} ${
+                  modifierClass === "secondary" ? styles.secondary : ""
+                }`}
+              >
+                {isFeaturedProduct ? productDescription : product?.description}
+              </p>
+              <Button buttonClass="primary" buttonLabel="See product"></Button>
+            </div>
+            {!isFeaturedProduct && (
+              <img
+                className={styles.productImage}
+                src={product.image.desktop}
+                alt={product.image.desktop}
+              />
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

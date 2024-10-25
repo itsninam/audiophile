@@ -1,9 +1,23 @@
 @import "../styles/colors";
 
-.productDescription {
-  .featuredProductTag {
-    width: 450px;
+.productContainer {
+  .productList {
     margin-bottom: 24px;
+  }
+
+  .productItem {
+    margin: 80px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .productItem:not(.secondary):nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .productInfo {
+    width: 450px;
   }
 
   .productTag {
@@ -21,7 +35,6 @@
   .productName {
     font-size: 3.5rem;
     font-weight: 600;
-    margin-bottom: 16px;
     max-width: 13ch;
 
     &.secondary {
@@ -33,9 +46,15 @@
   .productDescription {
     color: $colour-text;
     line-height: 2.5rem;
+    margin: 16px 0px 24px 0px;
 
     &.secondary {
       color: $colour-text-light;
     }
+  }
+
+  .productImage {
+    height: 550px;
+    border-radius: 8px;
   }
 }

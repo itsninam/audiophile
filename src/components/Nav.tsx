@@ -2,20 +2,23 @@ import navRoutes from "../routes/navRoutes";
 import { NavLink } from "react-router-dom";
 
 import styles from "./Nav.module.scss";
-import logo from "../assets/shared/desktop/logo.svg";
-import cart from "../assets/shared/desktop/icon-cart.svg";
-import mobileMenu from "../assets/shared/tablet/icon-hamburger.svg";
 
 function Nav() {
   return (
     <nav className={styles.nav}>
       <div className={`${styles.wrapper} wrapper`}>
         <button className={styles.mobileMenu}>
-          <img src={mobileMenu} alt="mobile menu" />
+          <img
+            src="starter-code/assets/shared/tablet/icon-hamburger.svg"
+            alt="mobile menu"
+          />
         </button>
         <h1>
           <NavLink to="/">
-            <img src={logo} alt="audiophile" />
+            <img
+              src="starter-code/assets/shared/desktop/logo.svg"
+              alt="audiophile"
+            />
             <span className="sr-only">audiophile</span>
           </NavLink>
         </h1>
@@ -30,7 +33,10 @@ function Nav() {
             );
           })}
         </ul>
-        <img src={cart} alt="cart" />
+        <img
+          src="starter-code/assets/shared/desktop/icon-cart.svg"
+          alt="cart"
+        />
       </div>
     </nav>
   );

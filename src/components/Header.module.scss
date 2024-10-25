@@ -15,7 +15,7 @@ header {
     content: "";
     background-color: $colour-background;
     position: absolute;
-    background-image: url("../assets/home/desktop/image-hero.jpg");
+    background-image: url("../../public/starter-code/assets/home/desktop/image-hero.jpg");
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
@@ -48,7 +48,7 @@ header {
 
 @media screen and (max-width: 1000px) {
   .header::after {
-    background-image: url("../assets/home/tablet/image-header.jpg");
+    background-image: url("../../public/starter-code/assets/home/tablet/image-header.jpg");
     background-size: contain;
     background-position: bottom;
     top: -80px;

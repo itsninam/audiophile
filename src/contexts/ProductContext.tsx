@@ -11,7 +11,7 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const locationName = location.pathname.replace(/\//, "");
   const [products, setProducts] = useState<Product[]>([]);
-  const [featuredProduct, setFeaturedProduct] = useState<Product | null>(null);
+  const [featuredProduct, setFeaturedProduct] = useState<Product[]>([]);
 
   useEffect(() => {
     setProducts(data);
@@ -21,13 +21,14 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
     if (location.pathname === "/") {
       const featuredProduct = products
         .filter((product) => product.category === "headphones")
-        .find((headphones) => headphones.new);
-      setFeaturedProduct(featuredProduct || null);
+        .filter((headphones) => headphones.new);
+      setFeaturedProduct(featuredProduct);
     } else {
       const featuredProduct = products
         .filter((product) => product.category === locationName)
-        .find((headphones) => headphones.new);
-      setFeaturedProduct(featuredProduct || null);
+        .sort((a, b) => Number(b.new) - Number(a.new));
+
+      setFeaturedProduct(featuredProduct);
     }
   }, [products, location.pathname, locationName]);
 
