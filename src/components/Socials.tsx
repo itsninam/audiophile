@@ -15,7 +15,7 @@ function Socials() {
         <button>
           <img
             src="starter-code/assets/shared/desktop/icon-twitter.svg"
-            alt="facebook"
+            alt="twitter"
           />
         </button>
       </li>
@@ -23,7 +23,7 @@ function Socials() {
         <button>
           <img
             src="starter-code/assets/shared/desktop/icon-instagram.svg"
-            alt="facebook"
+            alt="instagram"
           />
         </button>
       </li>

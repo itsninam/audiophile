@@ -5,7 +5,7 @@ function Headphones() {
   return (
     <>
       <Heading />
-      <ProductDescription />;
+      <ProductDescription />
     </>
   );
 }

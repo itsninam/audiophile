@@ -11,7 +11,7 @@ function ProductDescription({
   const { featuredProduct } = useProduct();
 
   return (
-    <div className={`${styles.productContainer} wrapper`}>
+    <main className={`${styles.productContainer} wrapper`}>
       <ul className={styles.productList}>
         {featuredProduct.map((product) => (
           <li
@@ -30,13 +30,13 @@ function ProductDescription({
                   New Product
                 </p>
               )}
-              <p
+              <h3
                 className={`${styles.productName} ${
                   modifierClass === "secondary" ? styles.secondary : ""
                 }`}
               >
                 {product?.name}
-              </p>
+              </h3>
               <p
                 className={`${styles.productDescription} ${
                   modifierClass === "secondary" ? styles.secondary : ""
@@ -50,13 +50,13 @@ function ProductDescription({
               <img
                 className={styles.productImage}
                 src={product.image.desktop}
-                alt={product.image.desktop}
+                alt={product.name}
               />
             )}
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
 

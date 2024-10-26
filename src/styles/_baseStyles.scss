@@ -10,9 +10,32 @@ body {
 
 p,
 ul,
-li {
+li,
+h1,
+h2,
+h3,
+h4 {
   margin: 0px;
   padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 3.2rem;
 }
 
 li {
@@ -29,12 +52,6 @@ a {
   width: 80%;
   margin: 0 auto;
   position: relative;
-}
-
-h1,
-h2 {
-  margin: 0px;
-  padding: 0px;
 }
 
 button {
@@ -63,4 +80,14 @@ button {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+}
+
+p {
+  color: $colour-text;
+  line-height: 2.4rem;
+}
+
+section {
+  padding: 64px 0px;
 }

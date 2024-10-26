@@ -14,23 +14,18 @@
 
   .footerContent {
     grid-area: a;
+    color: $colour-text-light;
+    width: 650px;
+    margin-bottom: 24px;
   }
 
-  .p {
+  .copyright {
     grid-area: b;
+    color: $colour-text-light;
   }
 
   .footerSocials {
     grid-area: c;
-    justify-self: end;
-  }
-
-  .footerContent {
-    width: 650px;
-
-    p:first-of-type {
-      margin-bottom: 24px;
-    }
   }
 
   .footerSocials {
@@ -53,7 +48,7 @@
       grid-area: a;
     }
 
-    .p {
+    .copyright {
       grid-area: b;
     }
 

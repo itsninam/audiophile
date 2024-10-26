@@ -5,7 +5,7 @@ function Speakers() {
   return (
     <>
       <Heading />
-      <ProductDescription />;
+      <ProductDescription />
     </>
   );
 }

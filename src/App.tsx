@@ -6,10 +6,11 @@ import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 
 function App() {
   return (
-    <div>
+    <>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,8 +18,9 @@ function App() {
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/speakers" element={<Speakers />} />
       </Routes>
+      <About />
       <Footer />
-    </div>
+    </>
   );
 }
 
