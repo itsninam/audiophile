@@ -32,6 +32,10 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
     }
   }, [products, location.pathname, locationName]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <ProductContext.Provider
       value={{ location, featuredProduct, products, locationName }}

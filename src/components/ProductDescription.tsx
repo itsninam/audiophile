@@ -1,5 +1,5 @@
-import Button from "./Button";
 import styles from "./ProductDescription.module.scss";
+import Button from "./Button";
 import { useProduct } from "../contexts/ProductContext";
 import { ProductDescriptionProps } from "../interfaces/ProductDescriptionProps";
 

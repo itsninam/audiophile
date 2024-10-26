@@ -1,11 +1,11 @@
+import styles from "./Nav.module.scss";
 import navRoutes from "../routes/navRoutes";
 import { NavLink } from "react-router-dom";
 
-import styles from "./Nav.module.scss";
 
-function Nav() {
+function Nav({ isFooterNav }: { isFooterNav?: boolean }) {
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${isFooterNav ? styles.footer : ""}`}>
       <div className={`${styles.wrapper} wrapper`}>
         <button className={styles.mobileMenu}>
           <img
@@ -13,6 +13,7 @@ function Nav() {
             alt="mobile menu"
           />
         </button>
+
         <h1>
           <NavLink to="/">
             <img
@@ -33,7 +34,9 @@ function Nav() {
             );
           })}
         </ul>
+
         <img
+          className={styles.cartIcon}
           src="starter-code/assets/shared/desktop/icon-cart.svg"
           alt="cart"
         />

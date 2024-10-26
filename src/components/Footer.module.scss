@@ -1,0 +1,64 @@
+@import "../styles/colors";
+
+.footer {
+  background-color: $colour-background;
+  padding-bottom: 32px;
+  color: $colour-text-light;
+
+  .flexContainer {
+    display: grid;
+    grid-template-areas:
+      "a c"
+      "b c";
+  }
+
+  .footerContent {
+    grid-area: a;
+  }
+
+  .p {
+    grid-area: b;
+  }
+
+  .footerSocials {
+    grid-area: c;
+    justify-self: end;
+  }
+
+  .footerContent {
+    width: 650px;
+
+    p:first-of-type {
+      margin-bottom: 24px;
+    }
+  }
+
+  .footerSocials {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    .flexContainer {
+      display: grid;
+      grid-template-areas:
+        "a a"
+        "b c";
+      align-items: center;
+    }
+
+    .footerContent {
+      grid-area: a;
+    }
+
+    .p {
+      grid-area: b;
+    }
+
+    .footerSocials {
+      grid-area: c;
+    }
+  }
+}
