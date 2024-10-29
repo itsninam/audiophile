@@ -7,6 +7,7 @@ import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import ShopNav from "./components/shopNav/ShopNav";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/speakers" element={<Speakers />} />
       </Routes>
+      <ShopNav />
       <About />
       <Footer />
     </>

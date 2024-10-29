@@ -4,7 +4,8 @@ function About() {
     <section className={`${styles.aboutContainer} wrapper`}>
       <div className={styles.infoContainer}>
         <h4 className={styles.heading}>
-          Bringing you the <span>best</span> audio gear
+          Bringing you the <span className={styles.accentShading}>best</span>{" "}
+          audio gear
         </h4>
         <p>
           Located at the heart of New York City, Audiophile is the premier store

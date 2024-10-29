@@ -1,0 +1,60 @@
+@import "../../styles/colors";
+
+.shopNavSection {
+  margin-top: 64px;
+
+  .shopNavList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shopNavItem {
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-transform: uppercase;
+
+    &:hover .shopItemImage {
+      top: -90px;
+    }
+
+    &:hover .shop {
+      color: $colour-accent;
+    }
+  }
+
+  .shopNavLink {
+    background-color: $colour-grey;
+    height: 160px;
+    width: 300px;
+    padding: 24px;
+  }
+
+  .shopItemImage {
+    height: 160px;
+    position: absolute;
+    top: -80px;
+    right: 50%;
+    transform: translate(50%);
+    transition: 0.5s;
+  }
+
+  .itemName {
+    margin: 40px 0px 12px 0px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    color: $colour-background;
+  }
+
+  .shopContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: $colour-text;
+  }
+}
