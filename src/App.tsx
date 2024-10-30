@@ -1,23 +1,23 @@
 import "./App.scss";
-import Home from "./pages/Home";
-import Nav from "./components/Nav";
 import { Routes, Route } from "react-router-dom";
-import Speakers from "./pages/Speakers";
-import Earphones from "./pages/Earphones";
-import Headphones from "./pages/Headphones";
+import { useProduct } from "./contexts/ProductContext";
+
 import Footer from "./components/Footer";
-import About from "./pages/About";
+import Home from "./pages/Home";
+import SelectedProduct from "./pages/SelectedProduct";
+import Nav from "./components/Nav";
 import ShopNav from "./components/shopNav/ShopNav";
+import About from "./pages/About";
 
 function App() {
+  const { locationName } = useProduct();
+
   return (
     <>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/headphones" element={<Headphones />} />
-        <Route path="/earphones" element={<Earphones />} />
-        <Route path="/speakers" element={<Speakers />} />
+        <Route path={`/${locationName}`} element={<SelectedProduct />} />
       </Routes>
       <ShopNav />
       <About />
