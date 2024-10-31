@@ -1,4 +1,4 @@
-@import "../styles/colors";
+@import "../../styles/colors";
 
 .nav {
   background-color: $colour-background;
@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    justify-content: flex-end;
   }
 
   .navLink {

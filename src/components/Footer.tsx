@@ -1,12 +1,14 @@
 import styles from "./Footer.module.scss";
-import Nav from "./Nav";
 import Socials from "./Socials";
+import Logo from "./navigation/Logo";
+import NavList from "./navigation/NavList";
 
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <Nav isFooterNav={true} />
       <div className={`${styles.flexContainer} wrapper`}>
+        <Logo />
+        <NavList isFooterNav={true} />
         <p className={styles.footerContent}>
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to

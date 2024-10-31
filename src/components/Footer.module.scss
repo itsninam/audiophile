@@ -2,12 +2,14 @@
 
 .footer {
   background-color: $colour-background;
-  padding-bottom: 32px;
   color: $colour-text-light;
 
   .flexContainer {
     display: grid;
+    padding: 32px 0px;
+    align-items: center;
     grid-template-areas:
+      "1 2"
       "a c"
       "b c";
   }
@@ -17,6 +19,7 @@
     color: $colour-text-light;
     width: 650px;
     margin-bottom: 24px;
+    margin: 16px 0px 24px 0px;
   }
 
   .copyright {
@@ -31,6 +34,7 @@
   .footerSocials {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
   }
 }
 
@@ -39,6 +43,7 @@
     .flexContainer {
       display: grid;
       grid-template-areas:
+        "1 2"
         "a a"
         "b c";
       align-items: center;
