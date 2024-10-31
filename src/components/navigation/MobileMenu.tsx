@@ -4,7 +4,7 @@ function MobileMenu() {
   return (
     <button className={styles.mobileMenu}>
       <img
-        src="starter-code/assets/shared/tablet/icon-hamburger.svg"
+        src="/starter-code/assets/shared/tablet/icon-hamburger.svg"
         alt="mobile menu"
       />
     </button>

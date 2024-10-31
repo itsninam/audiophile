@@ -5,7 +5,7 @@ function Logo() {
     <h1>
       <NavLink to="/">
         <img
-          src="starter-code/assets/shared/desktop/logo.svg"
+          src="/starter-code/assets/shared/desktop/logo.svg"
           alt="audiophile"
         />
         <span className="sr-only">audiophile</span>

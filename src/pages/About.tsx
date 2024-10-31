@@ -17,7 +17,7 @@ function About() {
         </p>
       </div>
       <img
-        src="starter-code/assets/shared/desktop/image-best-gear.jpg"
+        src="/starter-code/assets/shared/desktop/image-best-gear.jpg"
         alt="Man standing against patterned wall and wearing headphones, looking into the distance"
       />
     </section>

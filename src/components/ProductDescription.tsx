@@ -1,7 +1,7 @@
 import styles from "./ProductDescription.module.scss";
-import Button from "./Button";
 import { useProduct } from "../contexts/ProductContext";
 import { ProductDescriptionProps } from "../interfaces/ProductDescriptionProps";
+import ButtonLink from "./buttons/ButtonLink";
 
 function ProductDescription({
   modifierClass,
@@ -44,7 +44,16 @@ function ProductDescription({
               >
                 {isFeaturedProduct ? productDescription : product?.description}
               </p>
-              <Button buttonClass="primary" buttonLabel="See product"></Button>
+
+              <ButtonLink
+                buttonLabel="See product"
+                buttonClass="primary"
+                linkTo={
+                  isFeaturedProduct
+                    ? `${product.category}/${product.slug}`
+                    : product.slug
+                }
+              ></ButtonLink>
             </div>
             {!isFeaturedProduct && (
               <img

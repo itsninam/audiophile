@@ -9,7 +9,7 @@ const ProductContext = createContext<IProductContext>({} as IProductContext);
 
 function ProductProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const locationName = location.pathname.replace(/\//, "");
+  const locationName = location.pathname.split("/")[1];
   const [products, setProducts] = useState<Product[]>([]);
   const [featuredProduct, setFeaturedProduct] = useState<Product[]>([]);
 

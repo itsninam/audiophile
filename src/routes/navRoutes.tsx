@@ -11,19 +11,19 @@ const navRoutes: NavRoute[] = [
   },
   {
     routeName: "Headphones",
-    routeLink: "/headphones",
+    routeLink: "headphones",
     routeImage:
       "starter-code/assets/shared/desktop/image-category-thumbnail-headphones.png",
   },
   {
     routeName: "Speakers",
-    routeLink: "/speakers",
+    routeLink: "speakers",
     routeImage:
       "starter-code/assets/shared/desktop/image-category-thumbnail-speakers.png",
   },
   {
     routeName: "Earphones",
-    routeLink: "/earphones",
+    routeLink: "earphones",
     routeImage:
       "starter-code/assets/shared/desktop/image-category-thumbnail-earphones.png",
   },

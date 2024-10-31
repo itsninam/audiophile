@@ -6,7 +6,7 @@ function Socials() {
       <li>
         <button>
           <img
-            src="starter-code/assets/shared/desktop/icon-facebook.svg"
+            src="/starter-code/assets/shared/desktop/icon-facebook.svg"
             alt="facebook"
           />
         </button>
@@ -14,7 +14,7 @@ function Socials() {
       <li>
         <button>
           <img
-            src="starter-code/assets/shared/desktop/icon-twitter.svg"
+            src="/starter-code/assets/shared/desktop/icon-twitter.svg"
             alt="twitter"
           />
         </button>
@@ -22,7 +22,7 @@ function Socials() {
       <li>
         <button>
           <img
-            src="starter-code/assets/shared/desktop/icon-instagram.svg"
+            src="/starter-code/assets/shared/desktop/icon-instagram.svg"
             alt="instagram"
           />
         </button>

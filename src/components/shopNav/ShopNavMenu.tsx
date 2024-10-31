@@ -5,7 +5,7 @@ function ShopNavMenu({ route }: { route: NavRoute }) {
   return (
     <>
       <img
-        src={route.routeImage}
+        src={`/${route.routeImage}`}
         alt={route.routeName}
         className={styles.shopItemImage}
       />
@@ -13,7 +13,7 @@ function ShopNavMenu({ route }: { route: NavRoute }) {
       <div className={styles.shopContainer}>
         <p className={styles.shop}>shop</p>
         <img
-          src="starter-code/assets/shared/desktop/icon-arrow-right.svg"
+          src="/starter-code/assets/shared/desktop/icon-arrow-right.svg"
           alt="arrow right"
         />
       </div>
