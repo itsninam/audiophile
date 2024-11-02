@@ -1,4 +1,4 @@
-@import "../styles/colors";
+@import "../../styles/colors";
 
 .productContainer {
   .productList {
@@ -53,5 +53,64 @@
 
   .productImage {
     height: 550px;
+  }
+
+  .flexContainer {
+    display: flex;
+    gap: 72px;
+  }
+
+  .productInfo .flexContainer {
+    align-items: center;
+  }
+
+  .featuresContainer {
+    width: 65%;
+  }
+
+  .boxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .productFeatures {
+    white-space: pre-wrap;
+  }
+
+  .quantity {
+    color: $colour-accent;
+    font-weight: 600;
+    margin-right: 16px;
+  }
+
+  .item {
+    display: inline;
+  }
+
+  .imageContainer {
+    display: grid;
+    grid-template-areas:
+      "a c"
+      "b c";
+    gap: 24px;
+
+    img {
+      width: 100%;
+    }
+
+    img:nth-of-type(1) {
+      grid-area: a;
+    }
+
+    img:nth-of-type(2) {
+      grid-area: b;
+      // align-self: flex-end;
+    }
+
+    img:nth-of-type(3) {
+      grid-area: c;
+      // width: 100%;
+    }
   }
 }

@@ -18,27 +18,18 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (location.pathname === "/") {
-      const featuredProduct = products
-        .filter((product) => product.category === "headphones")
-        .filter((headphones) => headphones.new);
-      setFeaturedProduct(featuredProduct);
-    } else {
-      const featuredProduct = products
-        .filter((product) => product.category === locationName)
-        .sort((a, b) => Number(b.new) - Number(a.new));
-
-      setFeaturedProduct(featuredProduct);
-    }
-  }, [products, location.pathname, locationName]);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
   return (
     <ProductContext.Provider
-      value={{ location, featuredProduct, products, locationName }}
+      value={{
+        location,
+        featuredProduct,
+        products,
+        locationName,
+        setFeaturedProduct,
+      }}
     >
       {children}
     </ProductContext.Provider>
