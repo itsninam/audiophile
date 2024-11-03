@@ -42,6 +42,7 @@ export interface Product {
   others: {
     slug: string;
     name: string;
+    category: string;
     image: {
       mobile: string;
       tablet: string;

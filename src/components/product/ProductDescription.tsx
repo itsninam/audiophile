@@ -5,6 +5,7 @@ import { ProductDescriptionProps } from "../../interfaces/ProductDescriptionProp
 import { useProduct } from "../../contexts/ProductContext";
 import ProductImage from "./ProductImage";
 import ProductFeatures from "./ProductFeatures";
+import RelatedProducts from "./RelatedProducts";
 
 function ProductDescription({
   modifierClass,
@@ -88,17 +89,12 @@ function ProductDescription({
         ))}
       </ul>
 
-      {/* {isFeaturedProduct && (
-        <>
-          <ProductFeatures featuredProduct={featuredProduct} />
-          <ProductImage featuredProduct={featuredProduct} />
-        </>
-      )} */}
       {isProductDescription &&
         featuredProduct.map((product) => (
           <Fragment key={product.id}>
             <ProductFeatures product={product} />
             <ProductImage product={product} />
+            <RelatedProducts product={product} />
           </Fragment>
         ))}
     </main>
