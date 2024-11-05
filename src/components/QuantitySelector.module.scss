@@ -1,0 +1,25 @@
+@import "../styles/colors";
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  background-color: $colour-grey;
+
+  button {
+    color: $colour-text;
+
+    &:hover {
+      color: $colour-accent;
+      background-color: $colour-light-grey;
+    }
+  }
+
+  .quantity {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $colour-background;
+  }
+}
