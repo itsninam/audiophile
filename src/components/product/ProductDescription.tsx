@@ -1,11 +1,15 @@
 import styles from "./ProductDescription.module.scss";
-import ButtonLink from "../buttons/ButtonLink";
 import { Fragment, useEffect } from "react";
 import { ProductDescriptionProps } from "../../interfaces/ProductDescriptionProps";
 import { useProduct } from "../../contexts/ProductContext";
+import { useNavigate } from "react-router-dom";
+import { Product } from "../../interfaces/Product";
+
 import ProductImage from "./ProductImage";
 import ProductFeatures from "./ProductFeatures";
 import RelatedProducts from "./RelatedProducts";
+import QuantitySelector from "../QuantitySelector";
+import Button from "../buttons/Button";
 
 function ProductDescription({
   modifierClass,
@@ -13,8 +17,45 @@ function ProductDescription({
   isFeaturedProduct,
   isProductDescription,
 }: ProductDescriptionProps) {
-  const { featuredProduct, products, setFeaturedProduct, locationName } =
-    useProduct();
+  const {
+    featuredProduct,
+    products,
+    setFeaturedProduct,
+    locationName,
+    setCartItems,
+    cartItems,
+    quantity,
+  } = useProduct();
+  const nav = useNavigate();
+
+  const handleAddToCart = (
+    product: Product,
+    event: React.MouseEvent<Element, MouseEvent>
+  ) => {
+    event.preventDefault();
+
+    const cartItem = {
+      id: product.id,
+      name: product.name,
+      image: product.image.desktop,
+      price: product.price,
+      quantity: quantity,
+    };
+
+    const cartItemExists = cartItems.some((item) => item.id === product.id);
+
+    if (!cartItemExists) {
+      setCartItems([...cartItems, cartItem]);
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id ? { ...item, quantity: quantity } : cartItem
+        )
+      );
+    }
+  };
+
+  console.log(cartItems);
 
   useEffect(() => {
     const featuredProduct = products
@@ -59,23 +100,29 @@ function ProductDescription({
               </p>
 
               {isProductDescription && (
-                <p>$ {product.price.toLocaleString()}</p>
+                <p className={styles.productPrice}>
+                  $ {product.price.toLocaleString()}
+                </p>
               )}
 
               <div className={isProductDescription ? styles.flexContainer : ""}>
-                {isProductDescription && <p>quantity</p>}
+                {isProductDescription && <QuantitySelector />}
 
-                <ButtonLink
+                <Button
+                  onHandleClick={(event) => {
+                    isProductDescription
+                      ? handleAddToCart(product, event)
+                      : nav(
+                          isFeaturedProduct
+                            ? `${product.category}/${product.slug}`
+                            : product.slug
+                        );
+                  }}
                   buttonLabel={
                     isProductDescription ? "Add to cart" : "See product"
                   }
                   buttonClass="primary"
-                  linkTo={
-                    isFeaturedProduct
-                      ? `${product.category}/${product.slug}`
-                      : product.slug
-                  }
-                ></ButtonLink>
+                ></Button>
               </div>
             </div>
             {!isFeaturedProduct && (

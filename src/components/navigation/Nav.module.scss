@@ -34,12 +34,16 @@
     color: $colour-accent;
   }
 
+  .cartItems {
+    color: $colour-text-white;
+  }
+
   .mobileMenu {
     display: none;
   }
 
   &.footer {
-    .cartIcon,
+    .cartContainer,
     .mobileMenu {
       display: none;
     }

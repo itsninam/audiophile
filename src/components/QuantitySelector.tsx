@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import styles from "../components/QuantitySelector.module.scss";
+import { useProduct } from "../contexts/ProductContext";
 
 function QuantitySelector() {
-  const [quantity, setQuantity] = useState(1);
+  const { quantity, setQuantity } = useProduct();
 
   const handleAddProduct = () => {
     setQuantity((prev) => prev + 1);
