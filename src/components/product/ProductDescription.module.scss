@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 64px;
   }
 
   .productItem:not(.secondary):nth-child(odd) {
@@ -16,6 +17,18 @@
   }
 
   .productInfo {
+    width: 45%;
+
+    .productPrice {
+      color: $colour-background;
+      font-weight: 500;
+    }
+  }
+
+  .productImage {
+    height: 520px;
+    width: 500px;
+    object-fit: cover;
     width: 50%;
   }
 
@@ -50,9 +63,10 @@
     }
   }
 
-  .productImage {
-    height: 520px;
-  }
+  // .productImage {
+  //   width: 50%;
+  //   object-fit: cover;
+  // }
 
   .flexContainer {
     display: flex;
@@ -61,6 +75,8 @@
 
   .productInfo .flexContainer {
     align-items: center;
+    margin-top: 24px;
+    gap: 24px;
   }
 
   .featuresContainer {
