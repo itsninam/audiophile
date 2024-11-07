@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useProduct } from "../../contexts/ProductContext";
 import styles from "./Nav.module.scss";
-import CartModal from "./CartModal";
+import CartModal from "../cart/CartModal";
 
 function Cart() {
   const { cartItems } = useProduct();
@@ -39,7 +39,12 @@ function Cart() {
           {cartItems.length > 0 && cartItemsTotal}
         </p>
       </div>
-      {showCartModal && <CartModal cartItemsTotal={cartItemsTotal} />}
+      {showCartModal && (
+        <CartModal
+          cartItemsTotal={cartItemsTotal}
+          showCartModal={showCartModal}
+        />
+      )}
     </>
   );
 }

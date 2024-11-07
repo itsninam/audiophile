@@ -56,54 +56,6 @@
       font-size: 1.2rem;
     }
   }
-
-  .cartModalOverlay {
-    position: absolute;
-    right: 0px;
-
-    &::before {
-      content: "";
-      height: 100vw;
-      width: 100vw;
-      background-color: $colour-text-light;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    .cartModal {
-      width: 380px;
-      z-index: 1000;
-      background-color: $colour-text-white;
-      position: absolute;
-      right: 0;
-      top: 54px;
-      margin-top: 8px;
-      padding: 16px;
-      border-radius: 8px;
-
-      .totalPrice {
-        margin-bottom: 12px;
-      }
-    }
-  }
-
-  .flexContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    img {
-      margin-right: 16px;
-      height: 50px;
-      width: 50px;
-    }
-  }
-
-  .cartList {
-    margin: 12px 0px;
-  }
 }
 
 @media screen and (max-width: 1000px) {
