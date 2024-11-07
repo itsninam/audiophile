@@ -49,7 +49,7 @@ function ProductDescription({
     } else {
       setCartItems(
         cartItems.map((item) =>
-          item.id === product.id ? { ...item, quantity: quantity } : cartItem
+          item.id === product.id ? { ...item, quantity: quantity } : item
         )
       );
     }
