@@ -36,7 +36,7 @@ function ProductDescription({
 
     const cartItem = {
       id: product.id,
-      name: product.name,
+      name: product.subName,
       image: product.image.desktop,
       price: product.price,
       quantity: quantity,

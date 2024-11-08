@@ -1,6 +1,7 @@
 import styles from "./Cart.module.scss";
 import { CartItems } from "../../interfaces/CartItems";
 import QuantitySelector from "../QuantitySelector";
+import RemoveCartItem from "./RemoveCartItem";
 
 function CartItem({
   item,
@@ -19,11 +20,18 @@ function CartItem({
             <p>${item.price}</p>
           </div>
         </div>
-        <QuantitySelector
-          showCartModal={showCartModal}
-          itemQuantity={item.quantity}
-          item={item}
-        />
+        <div>
+          <QuantitySelector
+            showCartModal={showCartModal}
+            itemQuantity={item.quantity}
+            item={item}
+          />
+          <RemoveCartItem
+            item={item}
+            showCartModal={showCartModal}
+            itemQuantity={item.quantity}
+          />
+        </div>
       </div>
     </li>
   );
