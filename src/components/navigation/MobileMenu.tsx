@@ -1,13 +1,14 @@
+import Button from "../buttons/Button";
 import styles from "./Nav.module.scss";
 
 function MobileMenu() {
   return (
-    <button className={styles.mobileMenu}>
+    <Button buttonClass={`${styles.mobileMenu} btn`}>
       <img
         src="/starter-code/assets/shared/tablet/icon-hamburger.svg"
         alt="mobile menu"
       />
-    </button>
+    </Button>
   );
 }
 

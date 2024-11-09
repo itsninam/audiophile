@@ -1,6 +1,7 @@
 import React from "react";
 import { CartItems } from "../../interfaces/CartItems";
 import { useProduct } from "../../contexts/ProductContext";
+import Button from "../buttons/Button";
 
 function RemoveCartItem({
   item,
@@ -21,12 +22,15 @@ function RemoveCartItem({
     }
   };
   return (
-    <button onClick={() => handleRemoveProduct(item)}>
+    <Button
+      onHandleClick={() => handleRemoveProduct(item)}
+      buttonClass="btn icon"
+    >
       <img
         src="/starter-code/assets/shared/desktop/delete-icon.svg"
         alt="delete"
       />
-    </button>
+    </Button>
   );
 }
 

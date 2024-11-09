@@ -1,6 +1,7 @@
 import styles from "../components/QuantitySelector.module.scss";
 import { useProduct } from "../contexts/ProductContext";
 import { CartItems } from "../interfaces/CartItems";
+import Button from "./buttons/Button";
 
 function QuantitySelector({
   showCartModal,
@@ -47,12 +48,26 @@ function QuantitySelector({
   };
 
   return (
-    <div className={styles.quantitySelector}>
-      <button onClick={handleRemoveProduct}>&minus;</button>
+    <div
+      className={
+        showCartModal
+          ? `${styles.quantitySelector} ${styles.cartSelector}`
+          : styles.quantitySelector
+      }
+    >
+      <Button
+        onHandleClick={handleRemoveProduct}
+        buttonLabel="&minus;"
+        buttonClass="btn"
+      />
       <p className={styles.quantity}>
         {showCartModal ? itemQuantity : quantity}
       </p>
-      <button onClick={handleAddProduct}>+</button>
+      <Button
+        onHandleClick={handleAddProduct}
+        buttonLabel="+"
+        buttonClass="btn"
+      />
     </div>
   );
 }

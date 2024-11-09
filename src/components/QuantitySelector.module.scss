@@ -22,4 +22,17 @@
     align-items: center;
     color: $colour-background;
   }
+
+  &.cartSelector {
+    button {
+      padding: 0px;
+      height: 30px;
+      width: 30px;
+    }
+
+    .quantity {
+      height: 30px;
+      width: 30px;
+    }
+  }
 }

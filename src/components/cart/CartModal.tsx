@@ -26,7 +26,7 @@ function CartModal({
             <CartHeader cartItemsTotal={cartItemsTotal} />
             <CartList showCartModal={showCartModal} />
             <CartTotal />
-            <Button buttonClass="primary" buttonLabel="Check out" />
+            <Button buttonClass="primary btn" buttonLabel="Check out" />
           </>
         )}
       </div>

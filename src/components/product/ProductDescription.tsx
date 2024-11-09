@@ -121,7 +121,7 @@ function ProductDescription({
                   buttonLabel={
                     isProductDescription ? "Add to cart" : "See product"
                   }
-                  buttonClass="primary"
+                  buttonClass="primary btn"
                 ></Button>
               </div>
             </div>

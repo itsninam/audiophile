@@ -21,10 +21,10 @@ function RelatedProducts({ product }: { product: Product }) {
               <img src={item.image.desktop} alt={item.name} />
               <h5 className={styles.itemName}>{item.name}</h5>
               <Button
-                buttonClass="primary"
+                buttonClass="primary btn"
                 buttonLabel="See product"
                 onHandleClick={() => handleClick(item.category, item.slug)}
-              ></Button>
+              />
             </li>
           );
         })}

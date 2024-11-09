@@ -1,31 +1,32 @@
 import styles from "./Footer.module.scss";
+import Button from "./buttons/Button";
 
 function Socials() {
   return (
     <ul className={styles.footerSocials}>
       <li>
-        <button>
+        <Button buttonClass="btn">
           <img
             src="/starter-code/assets/shared/desktop/icon-facebook.svg"
             alt="facebook"
           />
-        </button>
+        </Button>
       </li>
       <li>
-        <button>
+        <Button buttonClass="btn">
           <img
             src="/starter-code/assets/shared/desktop/icon-twitter.svg"
             alt="twitter"
           />
-        </button>
+        </Button>
       </li>
       <li>
-        <button>
+        <Button buttonClass="btn">
           <img
             src="/starter-code/assets/shared/desktop/icon-instagram.svg"
             alt="instagram"
           />
-        </button>
+        </Button>
       </li>
     </ul>
   );
