@@ -16,7 +16,7 @@
   }
 
   .cartModal {
-    width: 350px;
+    width: 370px;
     z-index: 1000;
     background-color: $colour-text-white;
     position: absolute;
@@ -51,20 +51,65 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
 
-      img {
-        margin-right: 16px;
-        height: 50px;
-        width: 50px;
-      }
+    .cartLabel {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      color: $colour-background;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .cartImage {
+      height: 50px;
+      width: 50px;
+      margin-right: 8px;
     }
 
     .cartList {
-      margin: 12px 0px;
+      margin: 24px 0px;
     }
 
-    .totalPrice {
-      margin-bottom: 12px;
+    .cartItem {
+      margin-bottom: 24px;
+    }
+
+    .itemName {
+      color: $colour-background;
+      font-weight: 600;
+    }
+
+    .itemPrice {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .totalPriceContainer {
+      margin-bottom: 24px;
+
+      .totalLabel {
+        text-transform: uppercase;
+      }
+
+      .totalPrice {
+        font-weight: 600;
+        color: $colour-background;
+        letter-spacing: 0.5px;
+        font-size: 1.8rem;
+      }
+    }
+
+    .deleteBtn {
+      img {
+        height: 18px;
+        width: 18px;
+      }
+    }
+
+    .checkOutBtn {
+      width: 100%;
     }
   }
 }

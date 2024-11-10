@@ -3,7 +3,7 @@ import styles from "./Nav.module.scss";
 
 function MobileMenu() {
   return (
-    <Button buttonClass={`${styles.mobileMenu} btn`}>
+    <Button buttonClass={`${styles.mobileMenu} btn icon`}>
       <img
         src="/starter-code/assets/shared/tablet/icon-hamburger.svg"
         alt="mobile menu"

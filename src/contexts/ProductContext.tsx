@@ -14,7 +14,7 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
   const [products, setProducts] = useState<Product[]>([]);
   const [featuredProduct, setFeaturedProduct] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState<CartItems[]>([]);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     setProducts(data);
@@ -22,7 +22,7 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setQuantity(1);
+    setQuantity(0);
   }, [location]);
 
   return (

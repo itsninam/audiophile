@@ -5,7 +5,7 @@ function Socials() {
   return (
     <ul className={styles.footerSocials}>
       <li>
-        <Button buttonClass="btn">
+        <Button buttonClass="btn icon">
           <img
             src="/starter-code/assets/shared/desktop/icon-facebook.svg"
             alt="facebook"
@@ -13,7 +13,7 @@ function Socials() {
         </Button>
       </li>
       <li>
-        <Button buttonClass="btn">
+        <Button buttonClass="btn icon">
           <img
             src="/starter-code/assets/shared/desktop/icon-twitter.svg"
             alt="twitter"
@@ -21,7 +21,7 @@ function Socials() {
         </Button>
       </li>
       <li>
-        <Button buttonClass="btn">
+        <Button buttonClass="btn icon">
           <img
             src="/starter-code/assets/shared/desktop/icon-instagram.svg"
             alt="instagram"

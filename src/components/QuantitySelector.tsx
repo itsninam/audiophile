@@ -26,10 +26,9 @@ function QuantitySelector({
     if (showCartModal) {
       handleSetCartItems(itemQuantity! < 2 ? 1 : itemQuantity! - 1);
     } else {
-      if (quantity < 2) {
+      if (quantity < 1) {
         return;
       }
-
       setQuantity((prev) => prev - 1);
     }
   };

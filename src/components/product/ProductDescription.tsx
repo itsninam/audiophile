@@ -122,6 +122,7 @@ function ProductDescription({
                     isProductDescription ? "Add to cart" : "See product"
                   }
                   buttonClass="primary btn"
+                  isDisabled={isProductDescription && quantity < 1 && true}
                 ></Button>
               </div>
             </div>

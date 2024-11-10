@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useProduct } from "../../contexts/ProductContext";
 import styles from "./Nav.module.scss";
 import CartModal from "../cart/CartModal";
+import Button from "../buttons/Button";
 
 function Cart() {
   const { cartItems } = useProduct();
@@ -31,10 +32,12 @@ function Cart() {
         className={styles.cartContainer}
         onClick={() => setShowCartModal(!showCartModal)}
       >
-        <img
-          src="/starter-code/assets/shared/desktop/icon-cart.svg"
-          alt="cart"
-        />
+        <Button buttonClass="btn icon">
+          <img
+            src="/starter-code/assets/shared/desktop/icon-cart.svg"
+            alt="your cart"
+          />
+        </Button>
         <p className={styles.cartItems}>
           {cartItems.length > 0 && cartItemsTotal}
         </p>

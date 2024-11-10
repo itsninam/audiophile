@@ -7,10 +7,10 @@ function CartHeader({ cartItemsTotal }: { cartItemsTotal: number }) {
 
   return (
     <div className={styles.flexContainer}>
-      <p>Cart ({`${cartItemsTotal}`})</p>
+      <p className={styles.cartLabel}>Cart ({`${cartItemsTotal}`})</p>
       <Button
         onHandleClick={() => setCartItems([])}
-        buttonClass="btn"
+        buttonClass="btn text"
         buttonLabel="Remove All"
       />
     </div>

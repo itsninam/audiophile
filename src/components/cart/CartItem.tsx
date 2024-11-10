@@ -11,16 +11,16 @@ function CartItem({
   showCartModal: boolean;
 }) {
   return (
-    <li>
+    <li className={styles.cartItem}>
       <div className={styles.flexContainer}>
         <div className={styles.flexContainer}>
-          <img src={item.image} alt={item.name} />
+          <img src={item.image} alt={item.name} className={styles.cartImage} />
           <div>
-            <p>{item.name}</p>
-            <p>${item.price}</p>
+            <p className={styles.itemName}>{item.name}</p>
+            <p className={styles.itemPrice}>${item.price.toLocaleString()}</p>
           </div>
         </div>
-        <div>
+        <div className={styles.flexContainer}>
           <QuantitySelector
             showCartModal={showCartModal}
             itemQuantity={item.quantity}

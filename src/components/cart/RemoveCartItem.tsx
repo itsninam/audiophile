@@ -1,11 +1,11 @@
-import React from "react";
+import styles from "./Cart.module.scss";
+
 import { CartItems } from "../../interfaces/CartItems";
 import { useProduct } from "../../contexts/ProductContext";
 import Button from "../buttons/Button";
 
 function RemoveCartItem({
   item,
-  itemQuantity,
   showCartModal,
 }: {
   item: CartItems;
@@ -16,19 +16,17 @@ function RemoveCartItem({
 
   const handleRemoveProduct = (item: CartItems) => {
     if (showCartModal) {
-      if (itemQuantity! < 2) {
-        setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
-      }
+      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
     }
   };
   return (
     <Button
       onHandleClick={() => handleRemoveProduct(item)}
-      buttonClass="btn icon"
+      buttonClass={`btn icon ${styles.deleteBtn}`}
     >
       <img
         src="/starter-code/assets/shared/desktop/delete-icon.svg"
-        alt="delete"
+        alt="delete cart item"
       />
     </Button>
   );

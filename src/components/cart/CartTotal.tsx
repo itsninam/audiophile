@@ -5,14 +5,13 @@ function CartTotal() {
   const { cartItems } = useProduct();
 
   return (
-    <div className={`${styles.flexContainer} ${styles.totalPrice}`}>
-      <p>Total</p>
-      <p>
+    <div className={`${styles.flexContainer} ${styles.totalPriceContainer}`}>
+      <p className={styles.totalLabel}>Total</p>
+      <p className={styles.totalPrice}>
         $
-        {cartItems.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        )}
+        {cartItems
+          .reduce((total, item) => total + item.price * item.quantity, 0)
+          .toLocaleString()}
       </p>
     </div>
   );

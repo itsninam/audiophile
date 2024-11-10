@@ -5,14 +5,20 @@ function Button({
   buttonLabel,
   onHandleClick,
   children,
+  isDisabled,
 }: {
   buttonClass: string;
   buttonLabel?: string;
   onHandleClick?: MouseEventHandler | undefined;
   children?: ReactNode;
+  isDisabled?: boolean;
 }) {
   return (
-    <button className={buttonClass} onClick={onHandleClick}>
+    <button
+      className={buttonClass}
+      onClick={onHandleClick}
+      disabled={isDisabled}
+    >
       {children || buttonLabel}
     </button>
   );
