@@ -36,6 +36,18 @@
 
   .cartItems {
     color: $colour-text-white;
+    position: absolute;
+    top: -21px;
+    right: -16px;
+    background-color: $colour-accent;
+    height: 32px;
+    min-width: 32px;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cartContainer {

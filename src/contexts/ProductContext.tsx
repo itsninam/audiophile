@@ -13,7 +13,9 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
   const locationName = location.pathname.split("/")[1];
   const [products, setProducts] = useState<Product[]>([]);
   const [featuredProduct, setFeaturedProduct] = useState<Product[]>([]);
-  const [cartItems, setCartItems] = useState<CartItems[]>([]);
+  const [cartItems, setCartItems] = useState<CartItems[]>(
+    JSON.parse(localStorage.getItem("cartItems") || "[]")
+  );
   const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
@@ -24,6 +26,10 @@ function ProductProvider({ children }: { children: React.ReactNode }) {
     window.scrollTo(0, 0);
     setQuantity(0);
   }, [location]);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <ProductContext.Provider

@@ -55,8 +55,6 @@ function ProductDescription({
     }
   };
 
-  console.log(cartItems);
-
   useEffect(() => {
     const featuredProduct = products
       .filter((product) => product.category === locationName)

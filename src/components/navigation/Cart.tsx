@@ -38,9 +38,9 @@ function Cart() {
             alt="your cart"
           />
         </Button>
-        <p className={styles.cartItems}>
-          {cartItems.length > 0 && cartItemsTotal}
-        </p>
+        {cartItems.length > 0 && (
+          <p className={styles.cartItems}>{cartItemsTotal}</p>
+        )}
       </div>
       {showCartModal && (
         <CartModal
