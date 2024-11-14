@@ -3,4 +3,5 @@ export interface ProductDescriptionProps {
   productDescription?: string;
   isFeaturedProduct?: boolean;
   isProductDescription?: boolean;
+  isOtherFeaturedProducts?: boolean;
 }

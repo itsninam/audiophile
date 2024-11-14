@@ -1,5 +1,5 @@
 import styles from "./ProductDescription.module.scss";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { ProductDescriptionProps } from "../../interfaces/ProductDescriptionProps";
 import { useProduct } from "../../contexts/ProductContext";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,7 @@ function ProductDescription({
   productDescription,
   isFeaturedProduct,
   isProductDescription,
+  isOtherFeaturedProducts,
 }: ProductDescriptionProps) {
   const {
     featuredProduct,
@@ -25,8 +26,12 @@ function ProductDescription({
     setCartItems,
     cartItems,
     quantity,
+    location,
   } = useProduct();
   const nav = useNavigate();
+  const [otherFeaturedProducts, setOtherFeaturedProducts] = useState<Product[]>(
+    []
+  );
 
   const handleAddToCart = (
     product: Product,
@@ -56,16 +61,42 @@ function ProductDescription({
   };
 
   useEffect(() => {
-    const featuredProduct = products
-      .filter((product) => product.category === locationName)
-      .sort((a, b) => Number(b.new) - Number(a.new));
-    setFeaturedProduct(featuredProduct);
-  }, [locationName, products, setFeaturedProduct]);
+    if (location!.pathname === "/") {
+      if (isOtherFeaturedProducts) {
+        setOtherFeaturedProducts(
+          products.filter((product) => product.category !== "headphones")
+        );
+      } else {
+        const featuredProduct = products.filter(
+          (product) => product.category === "headphones" && product.new
+        );
+        setFeaturedProduct(featuredProduct);
+      }
+    } else {
+      const featuredProduct = products
+        .filter((product) => product.category === locationName)
+        .sort((a, b) => Number(b.new) - Number(a.new));
+      setFeaturedProduct(featuredProduct);
+    }
+  }, [
+    products,
+    location,
+    setFeaturedProduct,
+    locationName,
+    isOtherFeaturedProducts,
+  ]);
+
+  const productItems =
+    location?.pathname === "/"
+      ? !isOtherFeaturedProducts
+        ? featuredProduct
+        : otherFeaturedProducts
+      : featuredProduct;
 
   return (
     <main className={`${styles.productContainer} wrapper`}>
       <ul className={styles.productList}>
-        {featuredProduct.map((product) => (
+        {productItems.map((product) => (
           <li
             key={product.id}
             className={`${styles.productItem} ${
