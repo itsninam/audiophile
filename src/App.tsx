@@ -26,8 +26,8 @@ function App() {
         />
       </Routes>
       <ShopNav />
-      <About />
       <OtherFeaturedProducts />
+      <About />
       <Footer />
     </>
   );

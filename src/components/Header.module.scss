@@ -26,6 +26,10 @@ header {
     z-index: 10;
     animation: wait 700ms, fadeIn 4s 700ms;
   }
+
+  .productContainer .productInfo {
+    width: 400px;
+  }
 }
 
 @keyframes wait {
@@ -47,10 +51,26 @@ header {
 }
 
 @media screen and (max-width: 1000px) {
-  .header::after {
-    background-image: url("../../public/starter-code/assets/home/tablet/image-header.jpg");
-    background-size: contain;
-    background-position: bottom;
-    top: -80px;
+  header {
+    &::after {
+      background-image: url("../../public/starter-code/assets/home/tablet/image-header.jpg");
+      background-size: contain;
+      background-position: bottom;
+      top: -80px;
+    }
+
+    .productContainer {
+      text-align: center;
+
+      .productItem {
+        justify-content: center;
+      }
+
+      .productInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   }
 }

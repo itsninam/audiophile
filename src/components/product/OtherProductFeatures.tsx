@@ -17,7 +17,7 @@ function OtherProductFeatures({
 
   return (
     <li className={`${styles.productItem} ${styles.otherFeaturedProducts}`}>
-      <div>
+      <div className={styles.productInfoContainer}>
         <h2>{product.name}</h2>
         {product.category === "speakers" && product.new && (
           <p>
