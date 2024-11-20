@@ -1,4 +1,5 @@
 import styles from "./About.module.scss";
+
 function About() {
   return (
     <section className={`${styles.aboutContainer} wrapper`}>
@@ -16,10 +17,16 @@ function About() {
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <img
-        src="/starter-code/assets/shared/desktop/image-best-gear.jpg"
-        alt="Man standing against patterned wall and wearing headphones, looking into the distance"
-      />
+      <picture>
+        <source
+          media="(max-width: 1000px)"
+          srcSet="/starter-code/assets/shared/tablet/image-best-gear.jpg"
+        />
+        <img
+          src="/starter-code/assets/shared/desktop/image-best-gear.jpg"
+          alt="Man standing against patterned wall and wearing headphones, looking into the distance"
+        />
+      </picture>
     </section>
   );
 }

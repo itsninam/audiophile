@@ -13,4 +13,20 @@
   .accentShading {
     color: $colour-accent;
   }
+
+  .infoContainer {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .aboutContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    .infoContainer,
+    .heading {
+      width: 100%;
+    }
+  }
 }
