@@ -89,9 +89,23 @@
       display: block;
     }
 
-    &.footer .wrapper {
+    &.footer {
+      .wrapper {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .navList {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .nav.footer {
+    .navList {
       flex-direction: column;
-      align-items: start;
     }
   }
 }

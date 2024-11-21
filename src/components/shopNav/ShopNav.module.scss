@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 32px;
   }
 
   .shopNavItem {
@@ -17,6 +18,10 @@
     align-items: center;
     border-radius: 8px;
     text-transform: uppercase;
+    background-color: $colour-grey;
+    height: 160px;
+    width: 300px;
+    padding: 24px;
 
     &:hover .shopItemImage {
       top: -90px;
@@ -25,13 +30,6 @@
     &:hover .shop {
       color: $colour-accent;
     }
-  }
-
-  .shopNavLink {
-    background-color: $colour-grey;
-    height: 160px;
-    width: 300px;
-    padding: 24px;
   }
 
   .shopItemImage {
@@ -56,5 +54,15 @@
     justify-content: center;
     gap: 8px;
     color: $colour-text;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .shopNavSection {
+    .shopNavList {
+      flex-direction: column;
+
+      gap: 96px;
+    }
   }
 }

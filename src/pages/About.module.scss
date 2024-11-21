@@ -4,10 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 64px;
 
   .heading {
-    width: 24ch;
+    width: 450px;
   }
 
   .accentShading {
@@ -24,7 +24,18 @@
     flex-direction: column-reverse;
     text-align: center;
 
-    .infoContainer,
+    .heading {
+      margin: 0px auto 24px auto;
+    }
+
+    .infoContainer {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .aboutContainer {
     .heading {
       width: 100%;
     }

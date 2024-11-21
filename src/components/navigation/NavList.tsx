@@ -15,7 +15,7 @@ function NavList({
 }) {
   const navRoutes = isShopNav ? navigationRoutes.slice(1) : navigationRoutes;
 
-  const shopNav = isShopNav ? `${stylesShopNav.shopNav} wrapper` : "";
+  const shopNav = isShopNav ? 'wrapper' : "";
   const footerNav = isFooterNav ? `${stylesFooter.footer} ${styles.nav}` : "";
 
   return (
