@@ -5,7 +5,7 @@ import { Product } from "../../interfaces/Product";
 
 function ProductFeatures({ product }: { product: Product }) {
   return (
-    <section className={styles.flexContainer}>
+    <section className={`${styles.flexContainer} features`}>
       <Fragment key={product.id}>
         <div className={styles.featuresContainer}>
           <h4>Features</h4>
