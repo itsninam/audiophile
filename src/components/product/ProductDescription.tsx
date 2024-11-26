@@ -73,7 +73,7 @@ function ProductDescription({
         );
         setFeaturedProduct(featuredProduct);
       }
-    } else {
+    } else if (location?.pathname === `/${locationName}`) {
       const featuredProduct = products
         .filter((product) => product.category === locationName)
         .sort((a, b) => Number(b.new) - Number(a.new));
@@ -98,7 +98,7 @@ function ProductDescription({
     <main className={`${styles.productContainer} wrapper`}>
       <ul
         className={`${styles.productList} ${
-          isOtherFeaturedProducts && styles.otherFeaturedProducts
+          isOtherFeaturedProducts ? styles.otherFeaturedProducts : ""
         }`}
       >
         {productItems.map((product, index) =>
