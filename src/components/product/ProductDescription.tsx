@@ -95,89 +95,91 @@ function ProductDescription({
       : featuredProduct;
 
   return (
-    <main className={`${styles.productContainer} wrapper`}>
-      <ul
-        className={`${styles.productList} ${
-          isOtherFeaturedProducts ? styles.otherFeaturedProducts : ""
-        }`}
-      >
-        {productItems.map((product, index) =>
-          isOtherFeaturedProducts ? (
-            <OtherProductFeatures product={product} index={index} />
-          ) : (
-            <li
-              key={product.id}
-              className={`${styles.productItem} ${
-                modifierClass === "secondary" ? styles.secondary : ""
-              }`}
-            >
-              <div className={styles.productInfo}>
-                {product.new && (
-                  <p
-                    className={`${styles.productTag} ${
+    <>
+      <section className={`wrapper`}>
+        <ul
+          className={`${styles.productList} ${
+            isOtherFeaturedProducts ? styles.otherFeaturedProducts : ""
+          }`}
+        >
+          {productItems.map((product, index) =>
+            isOtherFeaturedProducts ? (
+              <OtherProductFeatures product={product} index={index} />
+            ) : (
+              <li
+                key={product.id}
+                className={`${styles.productItem} ${
+                  modifierClass === "secondary" ? styles.secondary : ""
+                }`}
+              >
+                <div className={styles.productInfo}>
+                  {product.new && (
+                    <p
+                      className={`${styles.productTag} ${
+                        modifierClass === "secondary" ? styles.secondary : ""
+                      }`}
+                    >
+                      New Product
+                    </p>
+                  )}
+                  <h3
+                    className={`${styles.productName} ${
                       modifierClass === "secondary" ? styles.secondary : ""
                     }`}
                   >
-                    New Product
+                    {product?.name}
+                  </h3>
+                  <p
+                    className={`${styles.productDescription} ${
+                      modifierClass === "secondary" ? styles.secondary : ""
+                    }`}
+                  >
+                    {isFeaturedProduct
+                      ? productDescription
+                      : product?.description}
                   </p>
-                )}
-                <h3
-                  className={`${styles.productName} ${
-                    modifierClass === "secondary" ? styles.secondary : ""
-                  }`}
-                >
-                  {product?.name}
-                </h3>
-                <p
-                  className={`${styles.productDescription} ${
-                    modifierClass === "secondary" ? styles.secondary : ""
-                  }`}
-                >
-                  {isFeaturedProduct
-                    ? productDescription
-                    : product?.description}
-                </p>
 
-                {isProductDescription && (
-                  <p className={styles.productPrice}>
-                    $ {product.price.toLocaleString()}
-                  </p>
-                )}
+                  {isProductDescription && (
+                    <p className={styles.productPrice}>
+                      $ {product.price.toLocaleString()}
+                    </p>
+                  )}
 
-                <div
-                  className={isProductDescription ? styles.flexContainer : ""}
-                >
-                  {isProductDescription && <QuantitySelector />}
+                  <div
+                    className={isProductDescription ? styles.flexContainer : ""}
+                  >
+                    {isProductDescription && <QuantitySelector />}
 
-                  <Button
-                    onHandleClick={(event) => {
-                      isProductDescription
-                        ? handleAddToCart(product, event)
-                        : nav(
-                            isFeaturedProduct
-                              ? `${product.category}/${product.slug}`
-                              : product.slug
-                          );
-                    }}
-                    buttonLabel={
-                      isProductDescription ? "Add to cart" : "See product"
-                    }
-                    buttonClass="primary btn"
-                    isDisabled={isProductDescription && quantity < 1 && true}
-                  ></Button>
+                    <Button
+                      onHandleClick={(event) => {
+                        isProductDescription
+                          ? handleAddToCart(product, event)
+                          : nav(
+                              isFeaturedProduct
+                                ? `${product.category}/${product.slug}`
+                                : product.slug
+                            );
+                      }}
+                      buttonLabel={
+                        isProductDescription ? "Add to cart" : "See product"
+                      }
+                      buttonClass="primary btn"
+                      isDisabled={isProductDescription && quantity < 1 && true}
+                    ></Button>
+                  </div>
                 </div>
-              </div>
-              {!isFeaturedProduct && (
-                <img
-                  className={styles.productImage}
-                  src={product.image.desktop}
-                  alt={product.name}
-                />
-              )}
-            </li>
-          )
-        )}
-      </ul>
+                {!isFeaturedProduct && (
+                  <img
+                    className={styles.productImage}
+                    src={product.image.desktop}
+                    alt={product.name}
+                  />
+                )}
+              </li>
+            )
+          )}
+        </ul>
+      </section>
 
       {isProductDescription &&
         featuredProduct.map((product) => (
@@ -187,7 +189,7 @@ function ProductDescription({
             <RelatedProducts product={product} />
           </Fragment>
         ))}
-    </main>
+    </>
   );
 }
 

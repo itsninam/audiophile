@@ -19,9 +19,9 @@ function ProductDetails() {
   }, [productId, setFeaturedProduct, location, products, locationName]);
 
   return (
-    <section>
+    <>
       <ProductDescription isProductDescription={true} />
-    </section>
+    </>
   );
 }
 

@@ -8,6 +8,7 @@ header {
   align-items: center;
   background-color: $colour-background;
   height: 600px;
+  margin-bottom: 144px;
 
   &::after {
     animation: fadeIn 4s;
@@ -74,6 +75,14 @@ header {
       .productName.secondary {
         font-size: 4.5rem;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  header {
+    .productContainer .productInfo {
+      width: 100%;
     }
   }
 }

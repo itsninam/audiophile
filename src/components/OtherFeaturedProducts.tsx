@@ -7,7 +7,7 @@ function OtherFeaturedProducts() {
   return (
     <>
       {location!.pathname === "/" && (
-        <section className="flex-container">
+        <div className="flex-container">
           <ProductDescription
             isFeaturedProduct={true}
             isOtherFeaturedProducts={true}
@@ -15,7 +15,7 @@ function OtherFeaturedProducts() {
           for the passionate music enthusiast."
             modifierClass="secondary"
           />
-        </section>
+        </div>
       )}
     </>
   );

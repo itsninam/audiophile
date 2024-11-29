@@ -12,7 +12,7 @@ function RelatedProducts({ product }: { product: Product }) {
   };
 
   return (
-    <section className={styles.relatedProductsSection}>
+    <section className={`${styles.relatedProductsSection} wrapper`}>
       <h4>You may also like</h4>
       <ul className={`${styles.relatedProductsList} ${styles.flexContainer}`}>
         {product.others.map((item) => {

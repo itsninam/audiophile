@@ -3,7 +3,7 @@ import NavList from "../navigation/NavList";
 
 function ShopNav() {
   return (
-    <section className={styles.shopNavSection}>
+    <section className={`${styles.shopNavSection}`}>
       <NavList isShopNav={true} />
     </section>
   );

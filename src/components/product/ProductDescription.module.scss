@@ -3,8 +3,6 @@
 
 .productContainer {
   .productList {
-    margin-bottom: 24px;
-
     &.otherFeaturedProducts {
       display: flex;
       flex-direction: column-reverse;
@@ -14,9 +12,16 @@
   .productItem {
     display: flex;
     align-items: center;
-    margin-bottom: 64px;
+    justify-content: space-between;
+    gap: 24px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 72px;
+    }
 
     &.otherFeaturedProducts {
+      margin-bottom: 72px;
+
       h2 {
         text-transform: uppercase;
       }
@@ -75,6 +80,7 @@
 
     &.otherFeaturedProducts:nth-of-type(1) {
       gap: 32px;
+      margin-bottom: 0px;
 
       .productInfoContainer {
         background-color: $colour-grey;
@@ -89,6 +95,7 @@
 
   .productItem:not(.secondary):nth-child(odd) {
     flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
   .productInfo {
@@ -171,32 +178,32 @@
   .item {
     display: inline;
   }
+}
 
-  .imageContainer {
-    display: grid;
-    grid-template-areas:
-      "a c"
-      "b c";
-    gap: 24px;
+.imageContainer {
+  display: grid;
+  grid-template-areas:
+    "a c"
+    "b c";
+  gap: 24px;
 
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 
-    img:nth-of-type(1) {
-      grid-area: a;
-    }
+  img:nth-of-type(1) {
+    grid-area: a;
+  }
 
-    img:nth-of-type(2) {
-      grid-area: b;
-      align-self: end;
-    }
+  img:nth-of-type(2) {
+    grid-area: b;
+    align-self: end;
+  }
 
-    img:nth-of-type(3) {
-      grid-area: c;
-      align-self: stretch;
-      object-fit: cover;
-    }
+  img:nth-of-type(3) {
+    grid-area: c;
+    align-self: stretch;
+    object-fit: cover;
   }
 }
 
@@ -271,7 +278,7 @@
     }
 
     .productImage {
-      height: 450px;
+      height: 350px;
       object-fit: contain;
     }
 
@@ -302,6 +309,16 @@
       li {
         max-width: 400px;
         margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .productContainer {
+    .productName {
+      &.secondary {
+        font-size: 4.5rem;
       }
     }
   }

@@ -10,6 +10,7 @@ import About from "./pages/About";
 import NavBar from "./components/navigation/NavBar";
 import ProductDetails from "./pages/ProductDetails";
 import OtherFeaturedProducts from "./components/OtherFeaturedProducts";
+import MainWrapper from "./components/MainWrapper";
 
 function App() {
   const { locationName } = useProduct();
@@ -17,17 +18,19 @@ function App() {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path={locationName} element={<SelectedProduct />} />
-        <Route
-          path={`${locationName}/:productId`}
-          element={<ProductDetails />}
-        />
-      </Routes>
-      <ShopNav />
-      <OtherFeaturedProducts />
-      <About />
+      <MainWrapper>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path={locationName} element={<SelectedProduct />} />
+          <Route
+            path={`${locationName}/:productId`}
+            element={<ProductDetails />}
+          />
+        </Routes>
+        <ShopNav />
+        <OtherFeaturedProducts />
+        <About />
+      </MainWrapper>
       <Footer />
     </>
   );
