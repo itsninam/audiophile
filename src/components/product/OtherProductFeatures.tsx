@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Product } from "../../interfaces/Product";
 import Button from "../buttons/Button";
 import styles from "./ProductDescription.module.scss";
@@ -15,6 +16,12 @@ function OtherProductFeatures({
     "/starter-code/assets/home/mobile/image-speaker-zx9.png",
   ];
 
+  const nav = useNavigate();
+
+  const handleClick = (category: string, slug: string): void => {
+    nav(`/${category}/${slug}`);
+  };
+
   return (
     <li className={`${styles.productItem} ${styles.otherFeaturedProducts}`}>
       <div className={styles.productInfoContainer}>
@@ -25,7 +32,15 @@ function OtherProductFeatures({
             truly remarkable sound.
           </p>
         )}
-        <Button buttonClass="btn tertiary" buttonLabel="See product" />
+        <Button
+          buttonClass={`${
+            product.category === "speakers" && product.new
+              ? "secondary"
+              : "secondary-outline"
+          } btn`}
+          buttonLabel="See product"
+          onHandleClick={() => handleClick(product.category, product.slug)}
+        />
       </div>
       <img
         src={images[index]}
