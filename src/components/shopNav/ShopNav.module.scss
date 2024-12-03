@@ -1,7 +1,11 @@
 @import "../../styles/colors";
 
 .shopNavSection {
-  margin-top: 72px;
+  margin-top: 64px;
+
+  &.shopNavMobile {
+    display: none;
+  }
 
   .shopNavList {
     display: flex;
@@ -59,10 +63,31 @@
 
 @media screen and (max-width: 1000px) {
   .shopNavSection {
-    .shopNavList {
+    &:not(.shopNavMobile) .shopNavList {
       flex-direction: column;
 
       gap: 96px;
+    }
+
+    &.shopNavMobile {
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: -5.5%;
+      right: -5.5%;
+      background-color: $colour-text-white;
+      z-index: 10;
+      margin-top: 0px;
+      padding-top: 110px;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .shopNavSection {
+    &.shopNavMobile .shopNavList {
+      flex-direction: column;
+      gap: 100px;
     }
   }
 }

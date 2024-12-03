@@ -6,6 +6,17 @@ html {
 body {
   font-family: "Manrope", sans-serif;
   font-size: 1.6rem;
+  position: relative;
+
+  &.overlay::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: $colour-text;
+    top: 0;
+    left: 0;
+  }
 }
 
 p,
@@ -129,6 +140,26 @@ a.btn,
       }
     }
   }
+
+  &.secondary {
+    background-color: $colour-background;
+    color: $colour-text-white;
+
+    &:hover {
+      border: 2px solid $colour-background;
+      background-color: transparent;
+      color: $colour-background;
+    }
+  }
+
+  &.secondary-outline {
+    border: 2px solid $colour-background;
+
+    &:hover {
+      background-color: $colour-background;
+      color: $colour-text-white;
+    }
+  }
 }
 
 img {
@@ -143,7 +174,7 @@ p {
 }
 
 section {
-  padding: 72px 0px;
+  padding: 64px 0px;
 }
 
 .flex-container {

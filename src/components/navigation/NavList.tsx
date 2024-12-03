@@ -5,17 +5,20 @@ import stylesFooter from "../navigation/Nav.module.scss";
 import navigationRoutes from "../../routes/navRoutes";
 import { NavLink } from "react-router-dom";
 import ShopNavMenu from "../shopNav/ShopNavMenu";
+import { MouseEventHandler } from "react";
 
 function NavList({
   isShopNav,
   isFooterNav,
+  onHandleClick,
 }: {
   isShopNav?: boolean;
   isFooterNav?: boolean;
+  onHandleClick?: MouseEventHandler | undefined;
 }) {
   const navRoutes = isShopNav ? navigationRoutes.slice(1) : navigationRoutes;
 
-  const shopNav = isShopNav ? 'wrapper' : "";
+  const shopNav = isShopNav ? "wrapper" : "";
   const footerNav = isFooterNav ? `${stylesFooter.footer} ${styles.nav}` : "";
 
   return (
@@ -34,6 +37,7 @@ function NavList({
                   isShopNav ? stylesShopNav.shopNavLink : styles.navLink
                 }`}
                 to={route.routeLink}
+                onClick={onHandleClick}
               >
                 {isShopNav ? <ShopNavMenu route={route} /> : route.routeName}
               </NavLink>
